@@ -1,7 +1,53 @@
+import { useContext } from "react";
 import {  FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const LogIn = () => {
+
+
+  const {signIn, googleSignIn } = useContext(AuthContext);
+    const navigate = useNavigate()
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
+    const handleLogIn = event => {
+        event.preventDefault();
+
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        signIn(email, password)
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser)
+            navigate(from, {replace: true})
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+
+        
+    }
+
+    const handleGoogleLogIn = () => {
+        googleSignIn()
+          .then((result) => {
+            const user = result.user;
+            console.log(user)
+            navigate(from, { replace: true });
+          })
+          .catch((error) => {
+            console.log("error", error.message);
+          });
+      };
+    
+     
+     
+
+
+
   return (
     <div className="">
       <section className="bg-gray-50  mb-10 mt-10">
@@ -18,7 +64,7 @@ const LogIn = () => {
                 Sign in to your account
               </h1>
               <form
-                // onSubmit={handleLogIn}
+                onSubmit={handleLogIn}
                 className="space-y-4 md:space-y-6"
                 action="#"
               >
@@ -56,7 +102,7 @@ const LogIn = () => {
                 </div>
                 <div className="">
                   <button
-                    // onClick={handleGoogleLogIn}
+                    onClick={handleGoogleLogIn}
 					
                     type="button"
                     className=" mx-auto py-1 px-2 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
@@ -74,7 +120,7 @@ const LogIn = () => {
                   Sign in
                 </button>
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                  Don’t have an account yet?{" "}
+                  Don’t have an account yet?
                   <Link
                     to="/signUp"
                     className="font-medium text-primary-600 hover:underline dark:text-primary-500"

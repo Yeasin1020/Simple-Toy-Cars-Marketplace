@@ -1,7 +1,44 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../provider/AuthProvider";
 
 
 const SignUp = () => {
+
+
+  const { createUser } = useContext(AuthContext);
+  const [error, setError] = useState("");
+
+  const handleSignUp = (event) => {
+    
+   
+    event.preventDefault();
+
+    const form = event.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    setError("");
+    if(password.length < 6) {
+      setError("password must be 6 characters or longer");
+      return;
+    }  
+   
+    createUser(email, password, photo, name)
+      .then((result) => {
+        const createdUser = result.user;
+        console.log(createdUser);
+        form.reset();
+        window.location.assign("/")
+      })
+      .catch((error) => {
+        console.log(error.massage);
+      });
+      
+  };
+
+
 	return (
 		<div className="bg-gray-50  mb-10 mt-10">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
@@ -17,7 +54,7 @@ const SignUp = () => {
                 Create and account
               </h1>
               <form
-                // onSubmit={handleSignUp}
+                onSubmit={handleSignUp}
                 className="space-y-4 md:space-y-6"
                 action="#"
               >
@@ -101,7 +138,7 @@ const SignUp = () => {
                     Login here 
                   </Link>
                 </p>
-                {/* <p className=" text-red-800">{error}</p> */}
+                <p className=" text-red-800">{error}</p>
               </form>
              
             </div>

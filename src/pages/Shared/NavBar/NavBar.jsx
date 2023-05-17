@@ -1,6 +1,17 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../provider/AuthProvider";
+import { Avatar } from "flowbite-react";
 
 const NavBar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then()
+      .catch((error) => console.log(error));
+  };
+
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -60,7 +71,7 @@ const NavBar = () => {
             <Link>My Toys</Link>
           </li>
           <li>
-            <Link>Add A Toys</Link>
+            <Link to="/addToys">Add A Toys</Link>
           </li>
           <li>
             <Link>Blog</Link>
@@ -68,7 +79,37 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link to="/login" className="btn">LogIn</Link>
+        {user ? (
+          <>
+            <li>
+              <Avatar
+                title={user?.displayName}
+                className=" h-16 w-16 rounded-2xl"
+                img={user?.photoURL}
+                rounded={true}
+              />
+            </li>
+            <li>
+              <button
+                onClick={handleLogOut}
+                className=" btn "
+              >
+                LogOut
+              </button>
+            </li>
+          </>
+        ) : (
+          <li>
+            <Link
+              to="/login"
+              className="btn"
+            >
+              LogIn
+            </Link>
+          </li>
+        )}
+
+       
       </div>
     </div>
   );
