@@ -1,9 +1,14 @@
 
+import HomeSection from "../HomeSection/HomeSection";
+import Tabs from "./Tabs/Tabs";
+
 
 const Home = () => {
 	return (
 		<div>
-			<h2>This is home</h2>
+
+			<HomeSection></HomeSection>
+			<Tabs></Tabs>
 		</div>
 	);
 };
