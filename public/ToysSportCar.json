@@ -1,23 +1,20 @@
-[
-  {
-    "id": 1,
-    "picture": "path_to_picture1.jpg",
-    "name": "Product 1",
-    "price": 10.99,
-    "rating": 4.5
-  },
-  {
-    "id": 2,
-    "picture": "path_to_picture2.jpg",
-    "name": "Product 2",
-    "price": 19.99,
-    "rating": 4.2
-  },
-  {
-    "id": 3,
-    "picture": "path_to_picture3.jpg",
-    "name": "Product 3",
-    "price": 8.99,
-    "rating": 3.9
-  }
-]
+// [
+//   {
+//     "picture": "path_to_picture1.jpg",
+//     "name": "Product 1",
+//     "price": 10.99,
+//     "rating": 4.5
+//   },
+//   {
+//     "picture": "path_to_picture2.jpg",
+//     "name": "Product 2",
+//     "price": 19.99,
+//     "rating": 4.2
+//   },
+//   {
+//     "picture": "path_to_picture3.jpg",
+//     "name": "Product 3",
+//     "price": 8.99,
+//     "rating": 3.9
+//   }
+// ]

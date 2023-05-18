@@ -3,15 +3,26 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const AddToys = () => {
-	const { user } = useContext(AuthContext);
-	
+  const { user } = useContext(AuthContext);
+
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+	fetch('http://localhost:5000/postToys', {
+		method: "POST",
+		headers: {'Content-Type': 'application/json'},
+		body: JSON.stringify(data)
+	})
+	.then(res => res.json())
+	.then(result => {
+		console.log(result)
+	})
+    console.log(data);
+  };
 
   return (
     <div className=" text-center bg-slate-500">
@@ -25,9 +36,8 @@ const AddToys = () => {
           />
         </div>
 
-
         <div>
-          <p  className="font-bold text-white">Email:</p>
+          <p className="font-bold text-white">Email:</p>
           <input
             className="bg-gray-200 w-96 p-3 rounded-lg border-spacing-3"
             value={`${user.email}`}
@@ -35,79 +45,79 @@ const AddToys = () => {
           />
         </div>
 
-        <select className="bg-gray-200 w-96 p-3 rounded-lg border-spacing-3 mt-4" {...register("category")}>
+        <select
+          className="bg-gray-200 w-96 p-3 rounded-lg border-spacing-3 mt-4"
+          {...register("category")}
+        >
           <option value="SportsCar">SportsCar</option>
           <option value="Truck">Truck</option>
           <option value="PoliceCar">PoliceCar</option>
         </select>
-       
 
         <div>
           <p className="font-bold text-white">PhotoUrl:</p>
           <input
             className="bg-gray-200 w-96 p-3 rounded-lg border-spacing-3"
-			placeholder="Photo-Url"
+            placeholder="Photo-Url"
             defaultValue=""
             {...register("Url")}
           />
         </div>
 
-
         <div>
           <p className="font-bold text-white">Price:</p>
           <input
             className="bg-gray-200 w-96 p-3 rounded-lg border-spacing-3"
-			placeholder="Price"
+            placeholder="Price"
             defaultValue=""
             {...register("Price")}
           />
         </div>
 
-
         <div>
           <p className="font-bold text-white">ToysName:</p>
           <input
             className="bg-gray-200 w-96 p-3 rounded-lg border-spacing-3"
-			placeholder="ToysName"
+            placeholder="ToysName"
             defaultValue=""
             {...register("ToysName")}
           />
         </div>
 
-
         <div>
           <p className="font-bold text-white">Rating:</p>
           <input
             className="bg-gray-200 w-96 p-3 rounded-lg border-spacing-3"
-			placeholder="Rating"
+            placeholder="Rating"
             defaultValue=""
             {...register("Rating")}
           />
         </div>
 
-
         <div>
           <p className="font-bold text-white">Available quantity:</p>
           <input
             className="bg-gray-200 w-96 p-3 rounded-lg border-spacing-3"
-			placeholder="Available quantity"
+            placeholder="Available quantity"
             defaultValue=""
             {...register("AvailableQuantity")}
           />
         </div>
 
-
         <div>
           <p className="font-bold text-white">Detail description:</p>
           <input
             className="bg-gray-200 w-96 p-3 rounded-lg border-spacing-3"
-			placeholder="Detail description"
+            placeholder="Detail description"
             defaultValue=""
             {...register("DetailDescription")}
           />
         </div>
 
-        <input className="font-medium w-96 m-5 text-blue-500 transition-colors hover:text-blue-700 btn" type="submit" />
+        <input
+          className="font-medium w-96 m-5 text-blue-500 transition-colors hover:text-blue-700 btn"
+          type="submit"
+        />
       </form>
     </div>
   );

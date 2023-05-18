@@ -2,29 +2,33 @@ import { handler } from "daisyui";
 import { useEffect, useState } from "react";
 // import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import ToysData from "../ToysData/ToysData";
 
 const AllTabs = () => {
-  const [sportCars, setSportCars] = useState([]);
-  const [truck, setTruck] = useState([]);
-  const [policeCar, setPoliceCar] = useState([]);
-  const [activeTab, setActiveTab] = useState("SportsCar");
+  const [toysCars, setToysCar] = useState([]);
+  const [activeTab, setActiveTab] = useState("Uzzal pare na");
 
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
   };
 
   useEffect(() => {
-    fetch("ToysSportCar.json")
+    fetch(`http://localhost:5000/allToys/${activeTab}`)
       .then((res) => res.json())
-      .then((data) => console.log(data));
-  }, []);
+      .then((data) => setToysCar(data));
+  }, [activeTab]);
+
+  // const result = toysCars?.filter(toysCar => toysCar.category == activeTab);
+  // console.log(result)
   return (
     <div>
       <div className="text-center">
         <button
           onClick={() => handleTabClick("SportsCar")}
           className={`btn btn-outline btn-secondary m-5${
-            activeTab == "SportsCar" ? " focus:bg-pink-600 focus:text-white" : ""
+            activeTab == "SportsCar"
+              ? " focus:bg-pink-600 focus:text-white"
+              : ""
           }`}
         >
           Sports Car
@@ -35,17 +39,25 @@ const AllTabs = () => {
             activeTab == "Truck" ? " focus:bg-pink-600 focus:text-white" : ""
           }`}
         >
-         Truck
+          Truck
         </button>
         <button
           onClick={() => handleTabClick("PoliceCar")}
           className={`btn btn-outline btn-secondary m-5${
-            activeTab == "PoliceCar" ? " focus:bg-pink-600 focus:text-white" : ""
+            activeTab == "PoliceCar"
+              ? " focus:bg-pink-600 focus:text-white"
+              : ""
           }`}
         >
           Police Cars
         </button>
-       </div>
+      </div>
+
+      <div>
+        {toysCars?.map((toysCar) => (
+          <ToysData key={toysCar._id} toysCar={toysCar}></ToysData>
+        ))}
+      </div>
 
       {/* <Tabs>
         <TabList className="text-center">
