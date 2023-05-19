@@ -43,6 +43,9 @@ const NavBar = () => {
               <Link className="justify-between">All Toys</Link>
             </li>
             <li>
+              <Link to="/allToys">All Toys</Link>
+            </li>
+            <li>
               <Link to="/myToys">My Toys</Link>
             </li>
             <li>
@@ -67,17 +70,21 @@ const NavBar = () => {
           <li>
             <Link to="/">Home</Link>
           </li>
-         {
-          user ? 
-          <div className="flex">
-            <li>
-          <Link to="/myToys">My Toys</Link>
-        </li>
-        <li>
-          <Link to="/addToys">Add A Toys</Link>
-        </li>
-          </div> : ''
-         }
+          {user ? (
+            <div className="flex">
+              <li>
+                <Link to="/allToys">All Toys</Link>
+              </li>
+              <li>
+                <Link to="/myToys">My Toys</Link>
+              </li>
+              <li>
+                <Link to="/addToys">Add A Toys</Link>
+              </li>
+            </div>
+          ) : (
+            ""
+          )}
           <li>
             <Link to="/blog">Blog</Link>
           </li>
@@ -95,26 +102,18 @@ const NavBar = () => {
               />
             </li>
             <li className=" list-none">
-              <button
-                onClick={handleLogOut}
-                className=" btn "
-              >
+              <button onClick={handleLogOut} className=" btn ">
                 LogOut
               </button>
             </li>
           </>
         ) : (
           <li className=" list-none">
-            <Link
-              to="/login"
-              className="btn"
-            >
+            <Link to="/login" className="btn">
               LogIn
             </Link>
           </li>
         )}
-
-       
       </div>
     </div>
   );
