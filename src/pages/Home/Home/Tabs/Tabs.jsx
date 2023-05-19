@@ -6,7 +6,7 @@ import ToysData from "../ToysData/ToysData";
 
 const AllTabs = () => {
   const [toysCars, setToysCar] = useState([]);
-  const [activeTab, setActiveTab] = useState("Uzzal pare na");
+  const [activeTab, setActiveTab] = useState("SportsCar");
 
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);

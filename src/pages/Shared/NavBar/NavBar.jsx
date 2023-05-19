@@ -34,7 +34,7 @@ const NavBar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            className="list-none menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
               <Link to="/">Home</Link>
@@ -67,12 +67,17 @@ const NavBar = () => {
           <li>
             <Link to="/">Home</Link>
           </li>
-          <li>
-            <Link to="/myToys">My Toys</Link>
-          </li>
-          <li>
-            <Link to="/addToys">Add A Toys</Link>
-          </li>
+         {
+          user ? 
+          <div className="flex">
+            <li>
+          <Link to="/myToys">My Toys</Link>
+        </li>
+        <li>
+          <Link to="/addToys">Add A Toys</Link>
+        </li>
+          </div> : ''
+         }
           <li>
             <Link to="/blog">Blog</Link>
           </li>
@@ -84,12 +89,12 @@ const NavBar = () => {
             <li>
               <Avatar
                 title={user?.displayName}
-                className=" h-16 w-16 rounded-2xl"
+                className=" h-10 w-10 mt-[-20px] mr-5 rounded-2xl"
                 img={user?.photoURL}
                 rounded={true}
               />
             </li>
-            <li>
+            <li className=" list-none">
               <button
                 onClick={handleLogOut}
                 className=" btn "
@@ -99,7 +104,7 @@ const NavBar = () => {
             </li>
           </>
         ) : (
-          <li>
+          <li className=" list-none">
             <Link
               to="/login"
               className="btn"
