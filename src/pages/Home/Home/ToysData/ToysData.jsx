@@ -8,9 +8,9 @@ import { Link } from "react-router-dom";
 const ToysData = ({ toysCar }) => {
   const { user } = useContext(AuthContext);
 
-  const handleTost =  () => {
-     if (!user) {
-      return toast("Please login now");
+  const handleTost = () => {
+    if (!user) {
+      return toast.error("Please login now");
     }
   };
 
@@ -53,8 +53,14 @@ const ToysData = ({ toysCar }) => {
           </span>
         </div>
         <div className="card-actions">
-          <Link onClick={handleTost()} className="btn btn-primary">
-            View Details
+          <Link to={`/singleToy/${_id}`}>
+            <button
+              type="button"
+              onClick={handleTost()}
+              className="btn btn-primary"
+            >
+              View Details
+            </button>
           </Link>
           <ToastContainer />
         </div>

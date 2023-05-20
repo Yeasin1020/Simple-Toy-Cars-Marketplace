@@ -53,7 +53,7 @@ const AllTabs = () => {
         </button>
       </div>
 
-      <div>
+      <div className="grid grid-cols-3">
         {toysCars?.map((toysCar) => (
           <ToysData key={toysCar._id} toysCar={toysCar}></ToysData>
         ))}

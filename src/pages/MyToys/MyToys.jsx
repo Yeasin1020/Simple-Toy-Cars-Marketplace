@@ -7,11 +7,35 @@ const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
 
+
+
   useEffect(() => {
     fetch(`http://localhost:5000/myToys/${user?.email}`)
       .then((result) => result.json())
       .then((data) => setMyToys(data));
   }, [user]);
+
+
+  const handleDelete = id => {
+	console.log(id)
+	const proceed = confirm ('are you sure you want to delete')
+	if(proceed){
+		fetch(`http://localhost:5000/myToyDelete/${id}`, {
+			method: 'DELETE',
+		})
+		.then(res => res.json())
+		.then(data => {
+			console.log(data);
+      if(data.deletedCount> 0){
+        alert('deleted successful');
+        const remaining = myToys.filter(singleToy => singleToy._id !==
+          id)
+          setMyToys(remaining)
+      }
+		})
+	}
+  }
+
   return (
     <div className="overflow-x-auto w-full">
       <table className="table w-full">
@@ -75,13 +99,13 @@ const MyToys = () => {
                     </span>
                   </div>
                 </div>
-                <div>{myToy.DetailDescription}</div>
+                <div><small className="mr-10">{myToy.DetailDescription}</small></div>
               </td>
               <td>
                 <Link><FaEdit></FaEdit></Link>
               </td>
               <td>
-                <FaRegTrashAlt></FaRegTrashAlt>
+                <button onClick={()=>handleDelete(myToy._id)}><FaRegTrashAlt></FaRegTrashAlt></button>
               </td>
               
             </tr>

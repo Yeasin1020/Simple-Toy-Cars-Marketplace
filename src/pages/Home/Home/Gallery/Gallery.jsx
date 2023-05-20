@@ -13,11 +13,11 @@ const Gallery = () => {
     },
     {
       id: 2,
-      value: "https://i.ibb.co/gSp8R0S/16a96fda0b3972083a469b02518009be.jpg",
+      value: "https://i.ibb.co/gryXx25/istockphoto-578298534-612x612.jpg",
     },
     {
       id: 3,
-      value: "https://i.ibb.co/gSp8R0S/16a96fda0b3972083a469b02518009be.jpg",
+      value: "https://i.ibb.co/12N2zPm/gettyimages-519556804-612x612.jpg",
     },
     {
       id: 4,

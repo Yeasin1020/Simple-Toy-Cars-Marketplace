@@ -31,7 +31,7 @@ const AddToys = () => {
           <p className="font-bold text-white">Name:</p>
           <input
             className="bg-gray-200 w-96 p-3 rounded-lg border-spacing-3"
-            value={`${user.displayName}`}
+            value={`${user?.displayName}`}
             {...register("text")}
           />
         </div>
@@ -40,7 +40,7 @@ const AddToys = () => {
           <p className="font-bold text-white">Email:</p>
           <input
             className="bg-gray-200 w-96 p-3 rounded-lg border-spacing-3"
-            value={`${user.email}`}
+            value={`${user?.email}`}
             {...register("email")}
           />
         </div>
