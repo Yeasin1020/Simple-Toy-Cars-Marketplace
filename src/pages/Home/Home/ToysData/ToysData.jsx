@@ -1,16 +1,18 @@
 import ReactStars from "react-rating-stars-component";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 import { useContext } from "react";
 import { AuthContext } from "../../../../provider/AuthProvider";
 import { Link } from "react-router-dom";
+import { Toaster, toast } from "react-hot-toast";
+
 
 const ToysData = ({ toysCar }) => {
   const { user } = useContext(AuthContext);
 
   const handleTost = () => {
     if (!user) {
-      return toast.error("Please login now");
+      return toast.error("This didn't work.",{duration:2000})
+        
     }
   };
 
@@ -27,9 +29,9 @@ const ToysData = ({ toysCar }) => {
     _id,
   } = toysCar || {};
   return (
-    <div className="card card-compact w-96 bg-base-100 shadow-xl">
+    <div className="card card-compact w-96 bg-base-100 shadow-xl hover:bg-pink-200 hover:shadow-pink-500">
       <figure>
-        <img className="w-56 h-46" src={Url} alt="Shoes" />
+        <img className="w-56 h-46 mt-5" src={Url} alt="Shoes" />
       </figure>
       <div className="card-body">
         <h2 className="card-title font-bold">{category}</h2>
@@ -56,15 +58,16 @@ const ToysData = ({ toysCar }) => {
           <Link to={`/singleToy/${_id}`}>
             <button
               type="button"
-              onClick={handleTost()}
+              onClick={handleTost}
               className="btn btn-primary"
             >
               View Details
             </button>
           </Link>
-          <ToastContainer />
+          
         </div>
       </div>
+      <Toaster />
     </div>
   );
 };

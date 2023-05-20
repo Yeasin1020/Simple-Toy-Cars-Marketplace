@@ -13,7 +13,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-gray-200 p-5 rounded-lg mt-5 mb-10">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -37,22 +37,22 @@ const NavBar = () => {
             className="list-none menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" className="text-pink-600 font-bold  hover:bg-pink-300 hover:text-black">Home</Link>
             </li>
             <li tabIndex={0}>
-              <Link className="justify-between">All Toys</Link>
+              <Link className="justify-between text-pink-600 font-extrabold  hover:bg-pink-300 hover:text-black">All Toys</Link>
             </li>
             <li>
-              <Link to="/allToys">All Toys</Link>
+              <Link to="/allToys" className="text-pink-600 font-bold  hover:bg-pink-300 hover:text-black">All Toys</Link>
             </li>
             <li>
-              <Link to="/myToys">My Toys</Link>
+              <Link to="/myToys" className="text-pink-600 font-bold  hover:bg-pink-300 hover:text-black">My Toys</Link>
             </li>
             <li>
-              <Link to="/addToys">Add A Toys</Link>
+              <Link to="/addToys" className="text-pink-600 font-bold  hover:bg-pink-300 hover:text-black">Add A Toys</Link>
             </li>
             <li>
-              <Link to="/blog">Blog</Link>
+              <Link to="/blog" className="text-pink-600 font-bold hover:bg-pink-300 hover:text-black">Blog</Link>
             </li>
           </ul>
         </div>
@@ -63,30 +63,30 @@ const NavBar = () => {
             alt=""
           />
         </Link>
-        <h1 className="font-bold text-xl ml-3">Toys Cars</h1>
+        <h1 className=" font-extrabold text-[40px] ml-3 text-pink-600">Toys Cars</h1>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden lg:flex bg-pink-100 rounded-xl">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" className="text-pink-600 font-bold  hover:bg-pink-300 hover:text-black">Home</Link>
           </li>
           {user ? (
             <div className="flex">
               <li>
-                <Link to="/allToys">All Toys</Link>
+                <Link to="/allToys" className="text-pink-600 font-bold  hover:bg-pink-300 hover:text-black">All Toys</Link>
               </li>
               <li>
-                <Link to="/myToys">My Toys</Link>
+                <Link to="/myToys" className="text-pink-600 font-bold  hover:bg-pink-300 hover:text-black">My Toys</Link>
               </li>
               <li>
-                <Link to="/addToys">Add A Toys</Link>
+                <Link to="/addToys" className="text-pink-600 font-bold  hover:bg-pink-300 hover:text-black">Add A Toys</Link>
               </li>
             </div>
           ) : (
             ""
           )}
           <li>
-            <Link to="/blog">Blog</Link>
+            <Link to="/blog" className="text-pink-600 font-bold  hover:bg-pink-300 hover:text-black">Blog</Link>
           </li>
         </ul>
       </div>
@@ -102,14 +102,14 @@ const NavBar = () => {
               />
             </li>
             <li className=" list-none">
-              <button onClick={handleLogOut} className=" btn ">
+              <button onClick={handleLogOut} className=" px-4 py-2 rounded-lg text-red-800 font-bold  hover:bg-red-300 hover:text-black">
                 LogOut
               </button>
             </li>
           </>
         ) : (
           <li className=" list-none">
-            <Link to="/login" className="btn">
+            <Link to="/login" className="px-4 py-2 rounded-lg text-red-800 font-bold  hover:bg-red-300 hover:text-black">
               LogIn
             </Link>
           </li>

@@ -59,23 +59,6 @@ const AllTabs = () => {
         ))}
       </div>
 
-      {/* <Tabs>
-        <TabList className="text-center">
-          <Tab>Sports Car</Tab>
-          <Tab>Truck</Tab>
-          <Tab>Mini Police Car</Tab>
-        </TabList>
-
-        <TabPanel>
-          <h2>Any content 1</h2>
-        </TabPanel>
-        <TabPanel>
-          <h2>Any content 2</h2>
-        </TabPanel>
-        <TabPanel>
-          <h2>Any content 3</h2>
-        </TabPanel>
-      </Tabs> */}
     </div>
   );
 };

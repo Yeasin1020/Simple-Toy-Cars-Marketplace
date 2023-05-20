@@ -102,7 +102,7 @@ const MyToys = () => {
                 <div><small className="mr-10">{myToy.DetailDescription}</small></div>
               </td>
               <td>
-                <Link><FaEdit></FaEdit></Link>
+               <Link to={`/update/${myToy._id}`}> <FaEdit></FaEdit></Link>
               </td>
               <td>
                 <button onClick={()=>handleDelete(myToy._id)}><FaRegTrashAlt></FaRegTrashAlt></button>
