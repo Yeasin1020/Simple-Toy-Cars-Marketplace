@@ -22,10 +22,11 @@ const AllTabs = () => {
   // console.log(result)
   return (
     <div>
+      <h1>Toys Category</h1>
       <div className="text-center">
         <button
           onClick={() => handleTabClick("SportsCar")}
-          className={`btn btn-outline btn-secondary m-5${
+          className={`btn border-none bg-pink-200 btn-outline btn-secondary m-5${
             activeTab == "SportsCar"
               ? " focus:bg-pink-600 focus:text-white"
               : ""
@@ -35,7 +36,7 @@ const AllTabs = () => {
         </button>
         <button
           onClick={() => handleTabClick("Truck")}
-          className={`btn btn-outline btn-secondary m-5${
+          className={`btn border-none bg-pink-200 btn-outline btn-secondary m-5${
             activeTab == "Truck" ? " focus:bg-pink-600 focus:text-white" : ""
           }`}
         >
@@ -43,7 +44,7 @@ const AllTabs = () => {
         </button>
         <button
           onClick={() => handleTabClick("PoliceCar")}
-          className={`btn btn-outline btn-secondary m-5${
+          className={`btn border-none bg-pink-200 btn-outline btn-secondary m-5${
             activeTab == "PoliceCar"
               ? " focus:bg-pink-600 focus:text-white"
               : ""
@@ -53,7 +54,7 @@ const AllTabs = () => {
         </button>
       </div>
 
-      <div className="grid grid-cols-3">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 ">
         {toysCars?.map((toysCar) => (
           <ToysData key={toysCar._id} toysCar={toysCar}></ToysData>
         ))}

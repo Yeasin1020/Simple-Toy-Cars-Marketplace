@@ -56,9 +56,9 @@ const MyToys = () => {
         </thead>
         <tbody>
           {/* row 1 */}
-          {myToys.map((myToy) => (
+          {myToys.map((myToy, index) => (
             <tr key={myToy._id}>
-              <th></th>
+              <th>{index + 1}</th>
               <td>
                 <div className="flex items-center space-x-3">
                   <div className="avatar">

@@ -13,7 +13,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="navbar bg-gray-200 p-5 rounded-lg mt-5 mb-10">
+    <div className="navbar  p-10 rounded-lg mt-5  ">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -40,7 +40,7 @@ const NavBar = () => {
               <Link to="/" className="text-pink-600 font-bold  hover:bg-pink-300 hover:text-black">Home</Link>
             </li>
             <li tabIndex={0}>
-              <Link className="justify-between text-pink-600 font-extrabold  hover:bg-pink-300 hover:text-black">All Toys</Link>
+              
             </li>
             <li>
               <Link to="/allToys" className="text-pink-600 font-bold  hover:bg-pink-300 hover:text-black">All Toys</Link>
@@ -63,7 +63,7 @@ const NavBar = () => {
             alt=""
           />
         </Link>
-        <h1 className=" font-extrabold text-[40px] ml-3 text-pink-600">Toys Cars</h1>
+        <h1 className=" font-extrabold lg:text-[40px] ml-3 text-pink-600">Toys Cars</h1>
       </div>
       <div className="navbar-center hidden lg:flex bg-pink-100 rounded-xl">
         <ul className="menu menu-horizontal px-1">

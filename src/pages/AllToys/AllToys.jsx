@@ -57,7 +57,7 @@ const AllToys = () => {
             </tr>
           </thead>
           <tbody>
-            {allToys.map((allToy, index) => (
+            {allToys.slice(0,20).map((allToy, index) => (
               <AllToysData
                 key={allToy._id}
                 allToy={allToy}

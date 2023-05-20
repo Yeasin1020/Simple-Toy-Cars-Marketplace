@@ -61,10 +61,10 @@ const Gallery = () => {
         src={sliderData.value}
         alt=""
       />
-      <div className=" grid grid-cols-3 lg:grid-cols-10">
+      <div className="mt-5 bg-gray-200 p-5 grid grid-cols-3 lg:grid-cols-10">
         {imgs.map((data, i) => (
           <img
-            className={`  mx-auto h[70px] w-[100px] hover:shadow-pink-900${sliderData.id==i?" border border-pink-500 rounded-xl hover:shadow-lg": ""}`}
+            className={` rounded-full  mx-auto h[70px] w-[100px] hover:shadow-pink-900${sliderData.id==i?" border border-pink-500 rounded-xl hover:shadow-lg": ""}`}
             key={data.id}
             src={data.value}
             onClick={() => handleClickImg(i)}
