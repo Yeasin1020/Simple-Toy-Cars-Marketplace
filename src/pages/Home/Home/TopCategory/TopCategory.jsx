@@ -13,12 +13,12 @@ const TopCategory = () => {
 	  };
 	return (
 		<div>
-			<h1>Top Category</h1>
-			<div className="card card-compact mb-10 w-96  mx-auto">
+			<h1 className='text-center font-bold text-[40px]'>Top Category</h1>
+			<div className="card card-compact mb-10 w-96 bg-gradient-to-r  hover:from-pink-500 hover:to-yellow-500 shadow-xl hover:bg-pink-100 hover:shadow-pink-500  mx-auto">
       <figure>
-        <img className="w-56 h-46 mt-5" src="" alt="Shoes" />
+        <img className="w-56 h-46 mt-5" src="https://i.ibb.co/G25XWNW/Screenshot-2023-05-21-065344-removebg-preview.png" alt="Shoes" />
       </figure>
-      <div className="card-body bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300  hover:from-pink-500 hover:to-yellow-500 shadow-xl hover:bg-pink-100 hover:shadow-pink-500">
+      <div className="card-body bg-gradient-to-r rounded-lg from-indigo-300 via-purple-300 to-pink-300 ">
         <h2 className="card-title font-bold"></h2>
         <h2 className=" font-medium">Price:  BDT</h2>
         <p className="font-medium"></p>
