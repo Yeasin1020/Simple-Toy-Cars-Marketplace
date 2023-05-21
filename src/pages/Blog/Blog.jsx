@@ -46,42 +46,35 @@ const Blog = () => {
 
         <br />
         <h2 className=" text-lg font-bold">
-          3.  What is express js? What is Nest JS?
+          3. What is express js? What is Nest JS?
         </h2>
         <p className=" font-semibold">
           Ans. <br />
-          Node.
+          Express.js :
           <br />
-          Js is a JavaScript runtime built on Chrome's V8 JavaScript engine,
-          which allows you to run JavaScript code outside of a web browser. It
-          provides a platform for building server-side applications using
-          JavaScript.
+          Express.js is a web application framework for Node.js that simplifies
+          the process of building web servers and APIs. It provides a set of
+          features and tools to handle HTTP requests, define routes, and manage
+          middleware. With Express.js, developers can quickly create server-side
+          applications using JavaScript.
           <br />
-          Express.
+          Nest.js.
           <br />
-          Js, on the other hand, is a web application framework built on top of
-          Node.js. It provides a set of tools and features to help you build web
-          applications and APIs quickly and easily. Express.js simplifies the
-          process of building web applications by providing routing, middleware,
-          and other features out of the box.
+          Nest.js is a powerful, progressive, and scalable framework for
+          building server-side applications with Node.js. It is built on top of
+          Express.js and incorporates modern JavaScript features and design
+          patterns to enhance developer productivity and application structure.
         </p>
         <h2 className=" text-lg font-bold">
-          4. What is a custom hook, and why will you create a custom hook?
+          4. What is MongoDB aggregate and how does it work?
         </h2>
         <p className=" font-semibold">
           Ans. <br />
-          In React, a custom hook is a reusable function that allows you to
-          share logic between different components. Custom hooks can contain
-          stateful logic and abstract away complex behavior, making it easier to
-          manage the application's state and behavior. You would create a custom
-          hook to simplify your code and avoid code repetition. For instance, if
-          you have multiple components with similar functionality, you can
-          extract the common logic into a custom hook and reuse it across those
-          components. This can help you reduce the amount of code you need to
-          write and maintain, making your code more efficient and easier to
-          manage. Additionally, by encapsulating the shared logic into a custom
-          hook, you can also make your code more readable and easier to
-          understand.
+          MongoDB's aggregate is a powerful aggregation framework that allows
+          you to perform advanced data processing and analysis operations on
+          your data stored in MongoDB. It provides a way to combine multiple
+          operations together, such as filtering, grouping, sorting, and
+          transforming data, in order to produce computed results.
         </p>
       </div>
     </div>

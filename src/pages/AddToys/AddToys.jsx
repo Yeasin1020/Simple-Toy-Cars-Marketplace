@@ -1,9 +1,15 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../provider/AuthProvider";
+import { Toaster, toast } from "react-hot-toast";
 
 const AddToys = () => {
   const { user } = useContext(AuthContext);
+
+
+  const handleTost = () => {
+    return toast.success("Added Successfully", { duration: 3000 });
+  };
 
   const {
     register,
@@ -30,7 +36,7 @@ const AddToys = () => {
         <div>
           <p className="font-bold text-white">Name:</p>
           <input
-            className=" w-96 p-3 rounded-lg border-spacing-3"
+            className="text-black font-semibold w-96 p-3 rounded-lg border-spacing-3"
             value={`${user?.displayName}`}
             {...register("text")}
           />
@@ -39,14 +45,14 @@ const AddToys = () => {
         <div>
           <p className="font-bold text-white">Email:</p>
           <input
-            className=" w-96 p-3 rounded-lg border-spacing-3"
+            className="text-black font-semibold w-96 p-3 rounded-lg border-spacing-3"
             value={`${user?.email}`}
             {...register("email")}
           />
         </div>
 
         <select
-          className=" w-96 p-3 rounded-lg border-spacing-3 mt-4"
+          className="text-black font-semibold w-96 p-3 rounded-lg border-spacing-3 mt-4"
           {...register("category")}
         >
           <option value="SportsCar">SportsCar</option>
@@ -57,7 +63,7 @@ const AddToys = () => {
         <div>
           <p className="font-bold text-white">PhotoUrl:</p>
           <input
-            className=" w-96 p-3 rounded-lg border-spacing-3"
+            className="text-black font-semibold w-96 p-3 rounded-lg border-spacing-3"
             placeholder="Photo-Url"
             defaultValue=""
             {...register("Url")}
@@ -67,7 +73,7 @@ const AddToys = () => {
         <div>
           <p className="font-bold text-white">Price:</p>
           <input
-            className=" w-96 p-3 rounded-lg border-spacing-3"
+            className="text-black font-semibold w-96 p-3 rounded-lg border-spacing-3"
             placeholder="Price"
             defaultValue=""
             {...register("Price")}
@@ -77,7 +83,7 @@ const AddToys = () => {
         <div>
           <p className="font-bold text-white">ToysName:</p>
           <input
-            className=" w-96 p-3 rounded-lg border-spacing-3"
+            className="text-black font-semibold w-96 p-3 rounded-lg border-spacing-3"
             placeholder="ToysName"
             defaultValue=""
             {...register("ToysName")}
@@ -87,7 +93,7 @@ const AddToys = () => {
         <div>
           <p className="font-bold text-white">Rating:</p>
           <input
-            className=" w-96 p-3 rounded-lg border-spacing-3"
+            className="text-black font-semibold w-96 p-3 rounded-lg border-spacing-3"
             placeholder="Rating"
             defaultValue=""
             {...register("Rating")}
@@ -97,7 +103,7 @@ const AddToys = () => {
         <div>
           <p className="font-bold text-white">Available quantity:</p>
           <input
-            className=" w-96 p-3 rounded-lg border-spacing-3"
+            className="text-black font-semibold w-96 p-3 rounded-lg border-spacing-3"
             placeholder="Available quantity"
             defaultValue=""
             {...register("AvailableQuantity")}
@@ -107,7 +113,7 @@ const AddToys = () => {
         <div>
           <p className="font-bold text-white">Detail description:</p>
           <input
-            className=" w-96 p-3 rounded-lg border-spacing-3"
+            className="text-black font-semibold w-96 p-3 rounded-lg border-spacing-3"
             placeholder="Detail description"
             defaultValue=""
             {...register("DetailDescription")}
@@ -115,10 +121,12 @@ const AddToys = () => {
         </div>
 
         <input
+          onClick={handleTost}
           className="font-medium w-96 m-5 text-blue-500 transition-colors hover:text-blue-700 btn"
           type="submit"
         />
       </form>
+      <Toaster></Toaster>
     </div>
   );
 };
