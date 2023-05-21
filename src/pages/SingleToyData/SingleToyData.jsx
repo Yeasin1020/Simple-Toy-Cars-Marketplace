@@ -17,7 +17,7 @@ const SingleToyData = () => {
   console.log(text, email);
   return (
     <div className="mx-5 rounded-xl hover:shadow-pink-500">
-      <div className=" grid lg:grid-cols-2  lg:mt-24 w-auto  lg:h-[500px] mb-10 bg-pink-100 mx-auto shadow-xl hover:shadow-pink-500">
+      <div className=" grid lg:grid-cols-2  lg:mt-24 w-auto  lg:h-[500px] mb-10 bg-gradient-to-r from-indigo-400 via-purple-100 to-pink-100  mx-auto shadow-xl hover:shadow-pink-500">
         <figure>
           <img
             className=" lg:mt-20 lg:ml-20 lg:w-[300px] lg:h-[300px]"

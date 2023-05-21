@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../provider/AuthProvider";
 import { Avatar } from "flowbite-react";
+import { FaBaby } from "react-icons/fa";
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -13,7 +14,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="navbar  p-10 rounded-lg mt-5  ">
+    <div className="navbar  p-5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  mb-5 rounded-lg mt-5  ">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -56,14 +57,10 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
-        <Link className="ml-5 mb-7 normal-case text-xl w-16 h-5">
-          <img
-            className="rounded-full"
-            src="https://i.ibb.co/GTcXwv3/a6a99e988fb4de345d5943a5160fe2378c1b0a6e-1024-1023.jpg"
-            alt=""
-          />
+        <Link className="ml-5  normal-case text-xl  ">
+        <FaBaby className="h-10 w-10 text-orange-600"></FaBaby>
         </Link>
-        <h1 className=" font-extrabold lg:text-[40px] ml-3 text-pink-600">Toys Cars</h1>
+        <h1 className=" lg:text-[40px] pl-2 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Toys Cars</h1>
       </div>
       <div className="navbar-center hidden lg:flex bg-pink-100 rounded-xl">
         <ul className="menu menu-horizontal px-1">
@@ -102,7 +99,7 @@ const NavBar = () => {
               />
             </li>
             <li className=" list-none">
-              <button onClick={handleLogOut} className=" px-4 py-2 rounded-lg text-red-800 font-bold  hover:bg-red-300 hover:text-black">
+              <button onClick={handleLogOut} className=" px-4 py-2 rounded-lg text-red-800 font-bold bg-red-300 hover:bg-red-500 hover:text-black">
                 LogOut
               </button>
             </li>

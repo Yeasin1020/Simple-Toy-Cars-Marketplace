@@ -1,11 +1,11 @@
+import { FaBaby } from "react-icons/fa";
+
 const Footer = () => {
   return (
     <footer className="footer	 p-10 bg-black text-base-content">
-      <div>
-       <img className="w-14 h-14 " src="https://i.ibb.co/GTcXwv3/a6a99e988fb4de345d5943a5160fe2378c1b0a6e-1024-1023.jpg" alt="" />
-        <p className="text-white">
-          Toys Cars Industries Ltd.
-        </p>
+      <div className="flex">
+      <FaBaby className="h-10 w-10 text-orange-600"></FaBaby>
+      <h1 className=" text-[50px] pb-5 pt-3 ml-3   font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Toys Cars</h1>
       </div>
       <div>
         <span className="footer-title text-white">Services</span>

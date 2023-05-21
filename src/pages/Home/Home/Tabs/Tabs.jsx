@@ -22,11 +22,11 @@ const AllTabs = () => {
   // console.log(result)
   return (
     <div>
-      <h1>Toys Category</h1>
+      <h1 className="text-center font-bold text-[40px] mt-5 mb-5">Toys Category</h1>
       <div className="text-center">
         <button
           onClick={() => handleTabClick("SportsCar")}
-          className={`btn border-none bg-pink-200 btn-outline btn-secondary m-5${
+          className={`btn border-none bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  btn-outline text-black m-5${
             activeTab == "SportsCar"
               ? " focus:bg-pink-600 focus:text-white"
               : ""
@@ -36,7 +36,7 @@ const AllTabs = () => {
         </button>
         <button
           onClick={() => handleTabClick("Truck")}
-          className={`btn border-none bg-pink-200 btn-outline btn-secondary m-5${
+          className={`btn border-none bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  btn-outline text-black m-5${
             activeTab == "Truck" ? " focus:bg-pink-600 focus:text-white" : ""
           }`}
         >
@@ -44,7 +44,7 @@ const AllTabs = () => {
         </button>
         <button
           onClick={() => handleTabClick("PoliceCar")}
-          className={`btn border-none bg-pink-200 btn-outline btn-secondary m-5${
+          className={`btn border-none bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  btn-outline text-black m-5${
             activeTab == "PoliceCar"
               ? " focus:bg-pink-600 focus:text-white"
               : ""
