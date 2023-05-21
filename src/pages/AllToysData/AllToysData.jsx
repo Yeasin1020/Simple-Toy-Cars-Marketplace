@@ -17,12 +17,12 @@ const AllToysData = ({ allToy, index}) => {
   } = allToy || {};
   return (
     <tr>
-      <th>{index + 1}</th>
-      <td className=" font-semibold">{text}</td>
-      <td className=" font-semibold">{category}</td>
-      <td className=" font-semibold">{ToysName}</td>
-      <td className=" font-semibold">{Price}</td>
-      <td className=" font-semibold">{AvailableQuantity}</td>
+      <th className="text-black">{index + 1}</th>
+      <td className=" font-semibold text-black">{text}</td>
+      <td className=" font-semibold text-black">{category}</td>
+      <td className=" font-semibold text-black">{ToysName}</td>
+      <td className=" font-semibold text-black">{Price}</td>
+      <td className=" font-semibold text-black">{AvailableQuantity}</td>
       <th>
         <Link to={`/singleToy/${_id}`}>
           <button

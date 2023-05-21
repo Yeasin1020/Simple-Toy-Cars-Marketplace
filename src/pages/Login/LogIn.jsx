@@ -50,7 +50,7 @@ const LogIn = () => {
 
   return (
     <div className="">
-      <section className="bg-gray-50  mb-10 mt-10">
+      <section className=" mb-10 mt-10">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <a
             href="#"

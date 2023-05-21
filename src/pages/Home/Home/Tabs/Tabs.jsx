@@ -22,7 +22,7 @@ const AllTabs = () => {
   // console.log(result)
   return (
     <div>
-      <h1 className="text-center font-bold text-[40px] mt-5 mb-5">Toys Category</h1>
+      <h1 className="text-center font-bold text-[40px] mt-5 mb-[100px]">Toys Category</h1>
       <div className="text-center">
         <button
           onClick={() => handleTabClick("SportsCar")}

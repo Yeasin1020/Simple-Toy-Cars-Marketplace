@@ -29,7 +29,7 @@ const AllToys = () => {
 
   return (
     <div>
-      <div className="text-center p-5">
+      <div className="text-center  p-5">
         <input
           onChange={(s) => setSearch(s.target.value)}
           type="text"
@@ -48,12 +48,12 @@ const AllToys = () => {
           <thead>
             <tr>
               <th></th>
-              <th>Name</th>
-              <th>Sub-category</th>
-              <th>Toy Name</th>
-              <th>Price</th>
-              <th>Available Quantity</th>
-              <th>Button</th>
+              <th className="text-black">Name</th>
+              <th className="text-black">Sub-category</th>
+              <th className="text-black">Toy Name</th>
+              <th className="text-black">Price</th>
+              <th className="text-black">Available Quantity</th>
+              <th className="text-black">Button</th>
             </tr>
           </thead>
           <tbody>

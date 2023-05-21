@@ -43,14 +43,14 @@ const MyToys = () => {
         <thead>
           <tr>
             <th></th>
-            <th>Seller Name & Email</th>
-            <th>Category</th>
-            <th>ToysName</th>
-            <th>AvailableQuantity</th>
-
-            <th>Rating & DetailDescription</th>
-            <th>Edit</th>
-            <th>Delete</th>
+            <th className="text-black">Seller Name & Email</th>
+            <th className="text-black">Category</th>
+            <th className="text-black">ToysName</th>
+            <th className="text-black">AvailableQuantity</th>
+ 
+            <th className="text-black">Rating & DetailDescription</th>
+            <th className="text-black">Edit</th>
+            <th className="text-black">Delete</th>
             
           </tr>
         </thead>
@@ -70,14 +70,14 @@ const MyToys = () => {
                     </div>
                   </div>
                   <div>
-                    <div className="font-bold">{myToy.text}</div>
-                    <div className="text-sm opacity-50">{myToy.email}</div>
+                    <div className="font-bold text-black">{myToy.text}</div>
+                    <div className="text-sm opacity-50 text-black">{myToy.email}</div>
                   </div>
                 </div>
               </td>
-              <td>{myToy.category}</td>
-              <td>{myToy.ToysName}</td>
-              <td>{myToy.AvailableQuantity}</td>
+              <td className="text-black">{myToy.category}</td>
+              <td className="text-black">{myToy.ToysName}</td>
+              <td className="text-black">{myToy.AvailableQuantity}</td>
 
               <td className="grid grid-cols-1">
                 <div>
@@ -99,13 +99,13 @@ const MyToys = () => {
                     </span>
                   </div>
                 </div>
-                <div><small className="mr-10">{myToy.DetailDescription}</small></div>
+                <div><small className="mr-10 text-black">{myToy.DetailDescription}</small></div>
               </td>
               <td>
-               <Link to={`/update/${myToy._id}`}> <FaEdit></FaEdit></Link>
+               <Link to={`/update/${myToy._id}`}> <FaEdit className="text-black"></FaEdit></Link>
               </td>
               <td>
-                <button onClick={()=>handleDelete(myToy._id)}><FaRegTrashAlt></FaRegTrashAlt></button>
+                <button onClick={()=>handleDelete(myToy._id)}><FaRegTrashAlt className="text-black"></FaRegTrashAlt></button>
               </td>
               
             </tr>

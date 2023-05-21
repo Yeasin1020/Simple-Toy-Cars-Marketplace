@@ -5,14 +5,12 @@ import { AuthContext } from "../../../../provider/AuthProvider";
 import { Link } from "react-router-dom";
 import { Toaster, toast } from "react-hot-toast";
 
-
 const ToysData = ({ toysCar }) => {
   const { user } = useContext(AuthContext);
 
   const handleTost = () => {
     if (!user) {
-      return toast.error("This didn't work.",{duration:2000})
-        
+      return toast.error("You have must login now", { duration: 3000 });
     }
   };
 
@@ -64,7 +62,6 @@ const ToysData = ({ toysCar }) => {
               View Details
             </button>
           </Link>
-          
         </div>
       </div>
       <Toaster />

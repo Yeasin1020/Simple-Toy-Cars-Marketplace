@@ -57,9 +57,9 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
-        <Link className="ml-5  normal-case text-xl  ">
+        <button className="ml-5  normal-case text-xl  ">
         <FaBaby className="h-10 w-10 text-orange-600"></FaBaby>
-        </Link>
+        </button>
         <h1 className=" lg:text-[40px] pl-2 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Toys Cars</h1>
       </div>
       <div className="navbar-center hidden lg:flex bg-pink-100 rounded-xl">
