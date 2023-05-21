@@ -14,7 +14,7 @@ const UpdateData = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    fetch(`http://localhost:5000/update/${_id}`, {
+    fetch(`https://toy-cars-server-three.vercel.app/update/${_id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -30,13 +30,13 @@ const UpdateData = () => {
   };
 
   return (
-    <div className=" text-center bg-slate-500">
+    <div className=" text-center">
 		<ToastContainer />
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <p className="font-bold text-white">Price:</p>
           <input
-            className="bg-gray-200 w-96 p-3 rounded-lg border-spacing-3"
+            className=" w-96 p-3 rounded-lg border-spacing-3"
             placeholder="Price"
             defaultValue={Price}
             {...register("Price")}
@@ -46,7 +46,7 @@ const UpdateData = () => {
         <div>
           <p className="font-bold text-white">Available quantity:</p>
           <input
-            className="bg-gray-200 w-96 p-3 rounded-lg border-spacing-3"
+            className=" w-96 p-3 rounded-lg border-spacing-3"
             placeholder="Available quantity"
             defaultValue={AvailableQuantity}
             {...register("AvailableQuantity")}
@@ -56,7 +56,7 @@ const UpdateData = () => {
         <div>
           <p className="font-bold text-white">Detail description:</p>
           <input
-            className="bg-gray-200 w-96 p-3 rounded-lg border-spacing-3"
+            className=" w-96 p-3 rounded-lg border-spacing-3"
             placeholder="Detail description"
             defaultValue={DetailDescription}
             {...register("DetailDescription")}

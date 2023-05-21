@@ -1,7 +1,10 @@
 
 import HomeSection from "../HomeSection/HomeSection";
+import CarouselPart from "./Carousel/CarouselPart";
+
 import Gallery from "./Gallery/Gallery";
 import Tabs from "./Tabs/Tabs";
+import TopCategory from "./TopCategory/TopCategory";
 
 
 const Home = () => {
@@ -9,8 +12,10 @@ const Home = () => {
 		<div>
 
 			<HomeSection></HomeSection>
+			<CarouselPart></CarouselPart>
 			<Gallery></Gallery>
 			<Tabs></Tabs>
+			<TopCategory></TopCategory>
 		</div>
 	);
 };

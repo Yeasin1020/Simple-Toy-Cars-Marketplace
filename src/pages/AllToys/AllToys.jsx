@@ -16,13 +16,13 @@ const AllToys = () => {
   // };
 
   useEffect(() => {
-    fetch("http://localhost:5000/allToy")
+    fetch("https://toy-cars-server-three.vercel.app/allToy")
       .then((res) => res.json())
       .then((data) => setAllToys(data));
   }, []);
 
   const handleSearch = () => {
-    fetch(`http://localhost:5000/toysSearchByToyName/${search}`)
+    fetch(`https://toy-cars-server-three.vercel.app/toysSearchByToyName/${search}`)
       .then((res) => res.json())
       .then((data) => setAllToys(data));
   };

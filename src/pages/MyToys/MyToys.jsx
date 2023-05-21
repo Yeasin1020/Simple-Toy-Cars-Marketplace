@@ -10,7 +10,7 @@ const MyToys = () => {
 
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myToys/${user?.email}`)
+    fetch(`https://toy-cars-server-three.vercel.app/myToys/${user?.email}`)
       .then((result) => result.json())
       .then((data) => setMyToys(data));
   }, [user]);
@@ -20,7 +20,7 @@ const MyToys = () => {
 	console.log(id)
 	const proceed = confirm ('are you sure you want to delete')
 	if(proceed){
-		fetch(`http://localhost:5000/myToyDelete/${id}`, {
+		fetch(`https://toy-cars-server-three.vercel.app/myToyDelete/${id}`, {
 			method: 'DELETE',
 		})
 		.then(res => res.json())

@@ -12,7 +12,7 @@ const AddToys = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-	fetch('http://localhost:5000/postToys', {
+	fetch('https://toy-cars-server-three.vercel.app/postToys', {
 		method: "POST",
 		headers: {'Content-Type': 'application/json'},
 		body: JSON.stringify(data)
@@ -25,12 +25,12 @@ const AddToys = () => {
   };
 
   return (
-    <div className=" text-center bg-slate-500">
+    <div className=" text-center">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <p className="font-bold text-white">Name:</p>
           <input
-            className="bg-gray-200 w-96 p-3 rounded-lg border-spacing-3"
+            className=" w-96 p-3 rounded-lg border-spacing-3"
             value={`${user?.displayName}`}
             {...register("text")}
           />
@@ -39,14 +39,14 @@ const AddToys = () => {
         <div>
           <p className="font-bold text-white">Email:</p>
           <input
-            className="bg-gray-200 w-96 p-3 rounded-lg border-spacing-3"
+            className=" w-96 p-3 rounded-lg border-spacing-3"
             value={`${user?.email}`}
             {...register("email")}
           />
         </div>
 
         <select
-          className="bg-gray-200 w-96 p-3 rounded-lg border-spacing-3 mt-4"
+          className=" w-96 p-3 rounded-lg border-spacing-3 mt-4"
           {...register("category")}
         >
           <option value="SportsCar">SportsCar</option>
@@ -57,7 +57,7 @@ const AddToys = () => {
         <div>
           <p className="font-bold text-white">PhotoUrl:</p>
           <input
-            className="bg-gray-200 w-96 p-3 rounded-lg border-spacing-3"
+            className=" w-96 p-3 rounded-lg border-spacing-3"
             placeholder="Photo-Url"
             defaultValue=""
             {...register("Url")}
@@ -67,7 +67,7 @@ const AddToys = () => {
         <div>
           <p className="font-bold text-white">Price:</p>
           <input
-            className="bg-gray-200 w-96 p-3 rounded-lg border-spacing-3"
+            className=" w-96 p-3 rounded-lg border-spacing-3"
             placeholder="Price"
             defaultValue=""
             {...register("Price")}
@@ -77,7 +77,7 @@ const AddToys = () => {
         <div>
           <p className="font-bold text-white">ToysName:</p>
           <input
-            className="bg-gray-200 w-96 p-3 rounded-lg border-spacing-3"
+            className=" w-96 p-3 rounded-lg border-spacing-3"
             placeholder="ToysName"
             defaultValue=""
             {...register("ToysName")}
@@ -87,7 +87,7 @@ const AddToys = () => {
         <div>
           <p className="font-bold text-white">Rating:</p>
           <input
-            className="bg-gray-200 w-96 p-3 rounded-lg border-spacing-3"
+            className=" w-96 p-3 rounded-lg border-spacing-3"
             placeholder="Rating"
             defaultValue=""
             {...register("Rating")}
@@ -97,7 +97,7 @@ const AddToys = () => {
         <div>
           <p className="font-bold text-white">Available quantity:</p>
           <input
-            className="bg-gray-200 w-96 p-3 rounded-lg border-spacing-3"
+            className=" w-96 p-3 rounded-lg border-spacing-3"
             placeholder="Available quantity"
             defaultValue=""
             {...register("AvailableQuantity")}
@@ -107,7 +107,7 @@ const AddToys = () => {
         <div>
           <p className="font-bold text-white">Detail description:</p>
           <input
-            className="bg-gray-200 w-96 p-3 rounded-lg border-spacing-3"
+            className=" w-96 p-3 rounded-lg border-spacing-3"
             placeholder="Detail description"
             defaultValue=""
             {...register("DetailDescription")}

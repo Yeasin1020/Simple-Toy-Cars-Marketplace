@@ -29,7 +29,7 @@ const ToysData = ({ toysCar }) => {
     _id,
   } = toysCar || {};
   return (
-    <div className="card card-compact mb-10 w-96 bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300  shadow-xl hover:bg-pink-100 hover:shadow-pink-500 mx-auto">
+    <div className="card card-compact mb-10 w-96 bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300  hover:from-pink-500 hover:to-yellow-500 shadow-xl hover:bg-pink-100 hover:shadow-pink-500 mx-auto">
       <figure>
         <img className="w-56 h-46 mt-5" src={Url} alt="Shoes" />
       </figure>
@@ -59,7 +59,7 @@ const ToysData = ({ toysCar }) => {
             <button
               type="button"
               onClick={handleTost}
-              className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  border-none hover:bg-white hover:text-black"
+              className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 border-none hover:bg-white hover:text-black"
             >
               View Details
             </button>

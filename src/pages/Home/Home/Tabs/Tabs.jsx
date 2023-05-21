@@ -13,7 +13,7 @@ const AllTabs = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/allToys/${activeTab}`)
+    fetch(`https://toy-cars-server-three.vercel.app/allToys/${activeTab}`)
       .then((res) => res.json())
       .then((data) => setToysCar(data));
   }, [activeTab]);
@@ -26,7 +26,7 @@ const AllTabs = () => {
       <div className="text-center">
         <button
           onClick={() => handleTabClick("SportsCar")}
-          className={`btn border-none bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  btn-outline text-black m-5${
+          className={`btn border-none bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 btn-outline text-black m-5${
             activeTab == "SportsCar"
               ? " focus:bg-pink-600 focus:text-white"
               : ""
@@ -36,7 +36,7 @@ const AllTabs = () => {
         </button>
         <button
           onClick={() => handleTabClick("Truck")}
-          className={`btn border-none bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  btn-outline text-black m-5${
+          className={`btn border-none bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 btn-outline text-black m-5${
             activeTab == "Truck" ? " focus:bg-pink-600 focus:text-white" : ""
           }`}
         >
@@ -44,7 +44,7 @@ const AllTabs = () => {
         </button>
         <button
           onClick={() => handleTabClick("PoliceCar")}
-          className={`btn border-none bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  btn-outline text-black m-5${
+          className={`btn border-none bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 btn-outline text-black m-5${
             activeTab == "PoliceCar"
               ? " focus:bg-pink-600 focus:text-white"
               : ""
