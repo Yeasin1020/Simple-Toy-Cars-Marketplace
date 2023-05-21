@@ -1,12 +1,18 @@
 import ReactStars from "react-rating-stars-component";
 
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../../../provider/AuthProvider";
 import { Link } from "react-router-dom";
 import { Toaster, toast } from "react-hot-toast";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ToysData = ({ toysCar }) => {
   const { user } = useContext(AuthContext);
+
+  useEffect(()=> {
+    AOS.init({duration:2000})
+  },[])
 
   const handleTost = () => {
     if (!user) {
@@ -27,15 +33,15 @@ const ToysData = ({ toysCar }) => {
     _id,
   } = toysCar || {};
   return (
-    <div className="card card-compact mb-10 w-96 bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300  hover:from-pink-500 hover:to-yellow-500 shadow-xl hover:bg-pink-100 hover:shadow-pink-500 mx-auto">
+    <div data-aos="fade-up" className="card card-compact mb-10 w-96 bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300  hover:from-pink-500 hover:to-yellow-500 shadow-xl hover:bg-pink-100 hover:shadow-pink-500 mx-auto">
       <figure>
         <img className="w-56 h-46 mt-5" src={Url} alt="Shoes" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title font-bold">{category}</h2>
-        <h2 className=" font-medium">Price: {Price} BDT</h2>
-        <p className="font-medium">{DetailDescription}</p>
-        <div className="flex mb-3 mt-2">
+        <h2 className="card-title font-bold text-black">{category}</h2>
+        <h2 className=" font-medium text-black">Price: {Price} BDT</h2>
+        <p className="font-medium text-black">{DetailDescription}</p>
+        <div  className="flex mb-3 mt-2">
           <ReactStars
             count={5}
             edit={false}

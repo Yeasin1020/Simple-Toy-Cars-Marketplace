@@ -1,7 +1,19 @@
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
+
+
 const HomeSection = () => {
+
+  useEffect(()=> {
+    AOS.init({duration:2000})
+  },[])
+  
   return (
     <div className="h-[400px]">
       <div
+      data-aos="fade-up"
         className=" bg-cover bg-center"
         style={{
           backgroundImage: `url("https://i.ibb.co/njvLH6X/istockphoto-1017309510-612x612.jpg")`,

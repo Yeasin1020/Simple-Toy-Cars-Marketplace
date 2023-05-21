@@ -3,14 +3,18 @@ import { AuthContext } from "../../provider/AuthProvider";
 import ReactStars from "react-rating-stars-component";
 import { FaEdit, FaRegTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 const MyToys = () => {
+  useEffect(()=> {
+    document.title = "ToyCar-MyToys"
+  },[])
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
 
 
 
   useEffect(() => {
-    fetch(`https://toy-cars-server-three.vercel.app/myToys/${user?.email}`)
+    fetch(`https://toy-car-server-production.up.railway.app/myToys/${user?.email}`)
       .then((result) => result.json())
       .then((data) => setMyToys(data));
   }, [user]);
@@ -18,22 +22,50 @@ const MyToys = () => {
 
   const handleDelete = id => {
 	console.log(id)
-	const proceed = confirm ('are you sure you want to delete')
-	if(proceed){
-		fetch(`https://toy-cars-server-three.vercel.app/myToyDelete/${id}`, {
-			method: 'DELETE',
-		})
-		.then(res => res.json())
-		.then(data => {
-			console.log(data);
-      if(data.deletedCount> 0){
-        alert('deleted successful');
-        const remaining = myToys.filter(singleToy => singleToy._id !==
-          id)
-          setMyToys(remaining)
-      }
-		})
-	}
+
+
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+
+      fetch(`https://toy-car-server-production.up.railway.app/myToyDelete/${id}`, {
+        method: 'DELETE',
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if(data.deletedCount> 0){
+          Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          )
+          const remaining = myToys.filter(singleToy => singleToy._id !==
+            id)
+            setMyToys(remaining)
+        }
+      })
+
+
+     
+    }
+  })
+
+
+
+	
+	
+
+
+
+
   }
 
   return (
@@ -58,7 +90,7 @@ const MyToys = () => {
           {/* row 1 */}
           {myToys.map((myToy, index) => (
             <tr key={myToy._id}>
-              <th>{index + 1}</th>
+              <th className="text-black">{index + 1}</th>
               <td>
                 <div className="flex items-center space-x-3">
                   <div className="avatar">

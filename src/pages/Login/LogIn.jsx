@@ -1,10 +1,13 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import {  FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const LogIn = () => {
-
+  useEffect(()=> {
+    document.title = "Toy-car-Login"
+  },[])
 
   const {signIn, googleSignIn } = useContext(AuthContext);
     const navigate = useNavigate()
@@ -22,6 +25,14 @@ const LogIn = () => {
         .then(result => {
             const loggedUser = result.user;
             console.log(loggedUser)
+            if(loggedUser){
+              Swal.fire({
+                title: 'Successfully logIn with Email Password!',
+                text: 'Welcome to our Toys Cars Shop',
+                icon: 'success',
+                confirmButtonText: 'Oky'
+              })
+            }
             navigate(from, {replace: true})
         })
         .catch(error=>{
@@ -36,6 +47,14 @@ const LogIn = () => {
           .then((result) => {
             const user = result.user;
             console.log(user)
+            if(user){
+              Swal.fire({
+                title: 'Successfully logIn with gmail!',
+                text: 'Do you want to continue',
+                icon: 'success',
+                confirmButtonText: 'Oky'
+              })
+            }
             navigate(from, { replace: true });
           })
           .catch((error) => {

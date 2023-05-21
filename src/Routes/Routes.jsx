@@ -62,12 +62,12 @@ const router = createBrowserRouter([
         path: "/singleToy/:id",
         element: <PrivateRoute><SingleToyData></SingleToyData></PrivateRoute>,
         loader: ({ params }) =>
-          fetch(`https://toy-cars-server-three.vercel.app/singleToy/${params.id}`),
+          fetch(`https://toy-car-server-production.up.railway.app/singleToy/${params.id}`),
       },
       {
         path: "/update/:id",
         element:<UpdateData></UpdateData>,
-        loader: ({params}) => fetch(`https://toy-cars-server-three.vercel.app/update/${params.id}`)
+        loader: ({params}) => fetch(`https://toy-car-server-production.up.railway.app/update/${params.id}`)
       }
     ],
   },

@@ -3,6 +3,9 @@ import AllToysData from "../AllToysData/AllToysData";
 // import SingleToyData from "../SingleToyData/SingleToyData";
 
 const AllToys = () => {
+  useEffect(()=> {
+    document.title = "Toy-car-AllToys"
+  },[])
   const [allToys, setAllToys] = useState([]);
   const [search, setSearch] = useState("");
   // const [modalData, setModalData] = useState({});
@@ -16,13 +19,13 @@ const AllToys = () => {
   // };
 
   useEffect(() => {
-    fetch("https://toy-cars-server-three.vercel.app/allToy")
+    fetch("https://toy-car-server-production.up.railway.app/allToy")
       .then((res) => res.json())
       .then((data) => setAllToys(data));
   }, []);
 
   const handleSearch = () => {
-    fetch(`https://toy-cars-server-three.vercel.app/toysSearchByToyName/${search}`)
+    fetch(`https://toy-car-server-production.up.railway.app/toysSearchByToyName/${search}`)
       .then((res) => res.json())
       .then((data) => setAllToys(data));
   };

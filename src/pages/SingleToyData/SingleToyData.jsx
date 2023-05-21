@@ -1,7 +1,17 @@
 import { useLoaderData } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const SingleToyData = () => {
+  useEffect(()=> {
+    document.title = "Toy-car-Details"
+  },[])
+  useEffect(()=> {
+    AOS.init({duration:2000})
+  },[])
+
   const data = useLoaderData();
   const {
     text,
@@ -16,7 +26,7 @@ const SingleToyData = () => {
   } = data;
   console.log(text, email);
   return (
-    <div className="mx-5 rounded-xl hover:shadow-pink-500">
+    <div data-aos="fade-up" className="mx-5 rounded-xl hover:shadow-pink-500">
       <div className=" grid lg:grid-cols-2  lg:mt-24 w-auto  lg:h-[500px] mb-10 bg-gradient-to-r from-indigo-400 via-purple-100 to-pink-100  mx-auto shadow-xl hover:shadow-pink-500">
         <figure>
           <img
@@ -26,12 +36,12 @@ const SingleToyData = () => {
           />
         </figure>
         <div className="card-body mx-auto lg:mt-20">
-          <h2 className="card-title font-bold">ToyName: {category}</h2>
-          <h2 className=" font-medium"><span className="font-bold">ToyPrice:</span> {Price} BDT</h2>
-          <h2 className="card-title font-bold">Name: {text}</h2>
-          <h2 className="card-title font-bold">Email: {email}</h2>
-          <h2 className="card-title font-bold">AvailableQuantity: {AvailableQuantity}</h2>
-          <p className="font-medium">{DetailDescription}</p>
+          <h2 className="card-title font-bold text-black">ToyName: {category}</h2>
+          <h2 className=" font-medium"><span className="font-bold text-black">ToyPrice:</span> {Price} BDT</h2>
+          <h2 className="card-title font-bold text-black">Name: {text}</h2>
+          <h2 className="card-title font-bold text-black">Email: {email}</h2>
+          <h2 className="card-title font-bold text-black">AvailableQuantity: {AvailableQuantity}</h2>
+          <p className="font-medium text-black">{DetailDescription}</p>
           <div className="flex mb-3 mt-2">
             <ReactStars
               count={5}

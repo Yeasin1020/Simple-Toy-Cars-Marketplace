@@ -1,4 +1,5 @@
 
+import { useEffect } from "react";
 import HomeSection from "../HomeSection/HomeSection";
 import CarouselPart from "./Carousel/CarouselPart";
 
@@ -8,6 +9,9 @@ import TopCategory from "./TopCategory/TopCategory";
 
 
 const Home = () => {
+	useEffect(()=> {
+		document.title = "ToyCar-Home"
+	  },[])
 	return (
 		<div>
 

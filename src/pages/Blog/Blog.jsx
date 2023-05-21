@@ -1,4 +1,9 @@
+import { useEffect } from "react";
+
 const Blog = () => {
+	useEffect(()=> {
+		document.title = "ToyCar-Blog"
+	  },[])
   return (
     <div>
       <div className="m-10">

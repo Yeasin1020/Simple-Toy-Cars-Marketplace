@@ -1,9 +1,12 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../provider/AuthProvider";
 import { Toaster, toast } from "react-hot-toast";
 
 const AddToys = () => {
+  useEffect(()=> {
+    document.title = "Toy-car-AddToys"
+  },[])
   const { user } = useContext(AuthContext);
 
 
@@ -18,7 +21,7 @@ const AddToys = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-	fetch('https://toy-cars-server-three.vercel.app/postToys', {
+	fetch('https://toy-car-server-production.up.railway.app/postToys', {
 		method: "POST",
 		headers: {'Content-Type': 'application/json'},
 		body: JSON.stringify(data)

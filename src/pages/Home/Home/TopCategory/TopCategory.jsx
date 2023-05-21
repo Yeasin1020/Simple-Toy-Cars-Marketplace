@@ -1,13 +1,17 @@
-import React from "react";
-import { Toaster, toast } from "react-hot-toast";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+
 import ReactStars from "react-rating-stars-component";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const TopCategory = () => {
+  useEffect(()=> {
+    AOS.init({duration:2000})
+  },[])
   return (
     <div>
       <h1 className="text-center font-bold text-[40px]">Top Category</h1>
-      <div className="grid grid-cols-3">
+      <div data-aos="fade-up" className="grid grid-cols-1 lg:grid-cols-3">
         {/* 1st */}
         <div className="card card-compact mb-10 w-96 bg-gradient-to-r  hover:from-pink-500 hover:to-yellow-500 shadow-xl hover:bg-pink-100 hover:shadow-pink-500  mx-auto">
           <figure>
@@ -17,8 +21,8 @@ const TopCategory = () => {
               alt=""
             />
           </figure>
-          <div className="card-body bg-gradient-to-r rounded-lg from-indigo-300 via-purple-300 to-pink-300 ">
-            <h2 className="card-title font-bold text-black">Toy Simple Car</h2>
+          <div  className="card-body bg-gradient-to-r rounded-lg from-indigo-300 via-purple-300 to-pink-300 ">
+            <h2  className="card-title font-bold text-black">Toy Simple Car</h2>
             <h2 className="  text-black font-bold">Best Popular Toy Car</h2>
             <p className="font-medium text-black">
               Toy cars provide children with a fun and engaging way to explore
